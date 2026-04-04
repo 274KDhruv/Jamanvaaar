@@ -1,0 +1,220 @@
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.hero-video-mock {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 10s linear;
+}
+
+.hero-section:hover .hero-bg-img {
+  transform: scale(1.1);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7));
+  z-index: 2;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 3;
+}
+
+.hero-tag-badge {
+  display: inline-block;
+  background-color: var(--haldi-yellow);
+  color: var(--primary-red);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+  animation: slideDown 0.8s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  line-height: 1.1;
+  margin-bottom: 10px;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.hero-headline span {
+  display: block;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.6em;
+  opacity: 0.9;
+}
+
+.hero-tagline-sub {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  color: var(--haldi-yellow);
+}
+
+.hero-usp-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(5px);
+  padding: 15px 30px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.2);
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.usp-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+}
+
+.usp-divider {
+  width: 1px;
+  height: 25px;
+  background: rgba(255,255,255,0.3);
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-primary-large {
+  background-color: var(--primary-red);
+  color: var(--text-light);
+  padding: 20px 45px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: var(--transition);
+  border: 1px solid var(--primary-red);
+}
+
+.btn-primary-large:hover {
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  padding: 20px 60px;
+}
+
+.hero-urgency-note {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.7;
+}
+
+.hero-scroll-indicator span {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.mouse {
+  width: 25px;
+  height: 45px;
+  border: 2px solid white;
+  border-radius: 20px;
+  position: relative;
+}
+
+.wheel {
+  width: 4px;
+  height: 8px;
+  background: white;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  animation: scrollMouse 2s infinite ease-in-out;
+}
+
+@keyframes scrollMouse {
+  0% { top: 8px; opacity: 1; }
+  100% { top: 25px; opacity: 0; }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .hero-usp-row {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+  .usp-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-headline {
+    font-size: 3rem;
+  }
+  .hero-tagline-sub {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+}

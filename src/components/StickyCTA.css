@@ -1,0 +1,72 @@
+.sticky-cta-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--primary-red);
+  color: var(--text-light);
+  padding: 15px 0;
+  z-index: 999;
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sticky-cta-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.sticky-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.sticky-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sticky-item span {
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.sticky-divider {
+  width: 1px;
+  height: 25px;
+  background: rgba(255,255,255,0.3);
+}
+
+.btn-sticky-book {
+  background-color: var(--haldi-yellow);
+  color: var(--text-dark);
+  padding: 12px 30px;
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.btn-sticky-book:hover {
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  padding: 12px 45px;
+  color: var(--text-light);
+  border: 1px solid var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .sticky-info {
+    display: none;
+  }
+}

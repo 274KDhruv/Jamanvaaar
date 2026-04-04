@@ -1,0 +1,119 @@
+.sample-menu-section {
+  background-color: var(--bg-white);
+  padding: 100px 0;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  position: relative;
+}
+
+.menu-category-card {
+  padding: 30px;
+  background: var(--bg-off-white);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: var(--transition);
+}
+
+.menu-category-card:hover {
+  transform: translateY(-10px);
+  background: var(--primary-red);
+  color: var(--text-light);
+}
+
+.menu-category-card:hover .category-icon {
+  background: var(--haldi-yellow);
+  color: var(--primary-red);
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.category-icon {
+  width: 50px;
+  height: 50px;
+  background: white;
+  color: var(--primary-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: var(--transition);
+}
+
+.category-header h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.menu-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu-item {
+  list-style: none;
+}
+
+.item-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.item-name {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.item-dots {
+  flex: 1;
+  border-bottom: 1px dotted rgba(0,0,0,0.1);
+  margin: 0 10px;
+}
+
+.menu-category-card:hover .item-dots {
+  border-bottom: 1px dotted rgba(255,255,255,0.3);
+}
+
+.item-desc {
+  font-size: 0.95rem;
+  opacity: 0.7;
+  line-height: 1.4;
+}
+
+.menu-note {
+  margin-top: 50px;
+  font-style: italic;
+  opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .menu-category-card {
+    padding: 40px 25px;
+  }
+}

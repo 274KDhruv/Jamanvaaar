@@ -1,0 +1,132 @@
+.experience-section {
+  background-color: var(--bg-white);
+  padding: 100px 0;
+  position: relative;
+}
+
+.section-header {
+  margin-bottom: 80px;
+}
+
+.section-subtitle {
+  color: var(--primary-red);
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.section-lead {
+  font-size: 1.25rem;
+  opacity: 0.7;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  position: relative;
+}
+
+.experience-card {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 40px 20px;
+  background: var(--bg-off-white);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: var(--transition);
+}
+
+.experience-card:hover {
+  transform: translateY(-10px);
+  background: var(--primary-red);
+  color: var(--text-light);
+}
+
+.experience-card:hover .step-icon-box {
+  background: var(--haldi-yellow);
+  color: var(--primary-red);
+}
+
+.step-number {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: var(--haldi-yellow);
+  color: var(--text-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  border: 4px solid var(--bg-white);
+  z-index: 3;
+}
+
+.step-icon-box {
+  width: 90px;
+  height: 90px;
+  background: white;
+  color: var(--primary-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: var(--transition);
+}
+
+.step-title {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  margin-bottom: 15px;
+}
+
+.step-desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.experience-cta {
+  margin-top: 60px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--primary-red);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .experience-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .experience-card {
+    padding: 50px 30px 40px;
+  }
+}

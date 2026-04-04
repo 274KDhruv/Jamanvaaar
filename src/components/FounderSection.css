@@ -1,0 +1,118 @@
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.founder-visual {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.founder-img-card {
+  position: relative;
+  padding: 20px;
+  background: var(--bg-white);
+  border-radius: 20px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.15);
+  border: 1px solid rgba(0,0,0,0.05);
+  z-index: 2;
+}
+
+.founder-img-card img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+.founder-label {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--primary-red);
+  color: var(--text-light);
+  padding: 20px 40px;
+  border-radius: 12px 0 12px 0;
+  text-align: right;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.founder-label h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.founder-label p {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+.founder-quote-box {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  background: var(--haldi-yellow);
+  color: var(--text-dark);
+  padding: 30px 40px;
+  border-radius: 15px;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  max-width: 250px;
+  z-index: 3;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.founder-story p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  opacity: 0.8;
+}
+
+.founder-signature {
+  margin-top: 50px;
+  font-family: var(--font-serif);
+}
+
+.founder-signature p {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  opacity: 0.6;
+}
+
+.founder-signature h4 {
+  font-size: 2rem;
+  color: var(--primary-red);
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .founder-grid {
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .founder-quote-box {
+    position: static;
+    margin: 0 auto 30px;
+    max-width: 100%;
+    animation: none;
+  }
+}
