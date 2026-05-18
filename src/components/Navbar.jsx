@@ -49,6 +49,7 @@ const Navbar = () => {
             <div className="logo-text-group">
               <span className="logo-text">Jamanvaaar</span>
               <span className="logo-tagline">Authentic Gujarati Dining</span>
+              <span className="logo-gujarati">જમણવાર</span>
             </div>
           </Link>
           

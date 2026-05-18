@@ -1,19 +1,47 @@
+/* ===================================
+   JAMANVAAAR — Gujarati Design System
+   =================================== */
+
 :root {
-  --primary-red: #8B1D22; /* Deep Maroon */
+  /* ── Core Palette ── */
+  --primary-red: #8B1D22;
   --primary-red-hover: #a12328;
-  --haldi-yellow: #EAB308; /* Haldi / Mustard */
-  --mehendi-green: #3E5B31; /* Mehendi / Leaf Green */
-  --beige-neutral: #F5F5DC; /* Warm Beige / Off-white */
+  --terracotta: #C4593A;
+  --terracotta-deep: #9E3B22;
+  --turmeric-gold: #D4A017;
+  --haldi-yellow: #EAB308;
+  --copper-accent: #B87333;
+  --brass-light: #D4A843;
+  --brass-dark: #8B6914;
+  --mehendi-green: #3E5B31;
+  --mehendi-deep: #2C4422;
+  --cream-base: #FFF8F0;
+  --parchment: #F5ECD7;
+  --beige-neutral: #F5F5DC;
   --text-dark: #1A1A1A;
   --text-light: #FFFFFF;
   --bg-white: #FFFFFF;
-  --bg-off-white: #FAFAFA;
+  --bg-off-white: #FAFAF5;
+
+  /* ── Typography ── */
   --font-serif: 'Playfair Display', serif;
   --font-sans: 'Jost', sans-serif;
+  --font-gujarati: 'Noto Serif Gujarati', serif;
+
+  /* ── Transitions ── */
   --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.25s ease;
+
+  /* ── Layout ── */
   --container-width: 1200px;
+
+  /* ── Gradients ── */
+  --gradient-brass: linear-gradient(135deg, #D4A843 0%, #B87333 50%, #D4A843 100%);
+  --gradient-terracotta: linear-gradient(135deg, #C4593A 0%, #8B1D22 100%);
+  --gradient-warm-glow: linear-gradient(135deg, rgba(212, 160, 23, 0.15) 0%, rgba(196, 89, 58, 0.08) 100%);
 }
 
+/* ── Reset ── */
 * {
   margin: 0;
   padding: 0;
@@ -25,7 +53,7 @@
 body {
   font-family: var(--font-sans);
   color: var(--text-dark);
-  background-color: var(--bg-white);
+  background-color: var(--cream-base);
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -59,25 +87,61 @@ button {
   padding: 0 20px;
 }
 
+/* ── Gujarati Text Accent ── */
+.gujarati-text {
+  font-family: var(--font-gujarati);
+  font-weight: 400;
+}
+
+.gujarati-accent {
+  font-family: var(--font-gujarati);
+  color: var(--turmeric-gold);
+  font-size: 0.85em;
+  letter-spacing: 1px;
+  opacity: 0.85;
+}
+
+/* ===================================
+   BUTTONS
+   =================================== */
 .btn-primary {
-  background-color: var(--primary-red);
+  background: var(--gradient-terracotta);
   color: var(--text-light);
-  padding: 12px 24px;
-  border-radius: 4px;
-  font-weight: 500;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
   font-size: 1rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(139, 29, 34, 0.25);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 168, 67, 0.2), transparent);
+  transition: left 0.6s ease;
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-red-hover);
   transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 29, 34, 0.35);
+}
+
+.btn-primary:hover::before {
+  left: 100%;
 }
 
 .btn-outline {
   border: 2px solid var(--text-light);
   color: var(--text-light);
   padding: 12px 24px;
-  border-radius: 4px;
+  border-radius: 8px;
   font-weight: 500;
 }
 
@@ -86,7 +150,50 @@ button {
   color: var(--primary-red);
 }
 
-/* Animations */
+/* ===================================
+   BANDHANI TEXTURE BACKGROUND
+   =================================== */
+.bandhani-bg {
+  position: relative;
+}
+
+.bandhani-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle, rgba(212, 168, 67, 0.08) 1px, transparent 1px),
+    radial-gradient(circle, rgba(212, 168, 67, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px, 18px 18px;
+  background-position: 0 0, 9px 12px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Grain overlay for premium texture */
+.grain-overlay {
+  position: relative;
+}
+
+.grain-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===================================
+   ANIMATIONS
+   =================================== */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
@@ -97,10 +204,43 @@ button {
   to { opacity: 1; transform: translateX(0); }
 }
 
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes gentlePulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(212, 160, 23, 0.15); }
+  50% { box-shadow: 0 0 35px rgba(212, 160, 23, 0.3); }
+}
+
+@keyframes patternDrift {
+  0% { background-position: 0 0, 9px 12px; }
+  100% { background-position: 24px 24px, 33px 36px; }
+}
+
+@keyframes warmGlow {
+  0%, 100% { box-shadow: 0 4px 20px rgba(196, 89, 58, 0.2); }
+  50% { box-shadow: 0 8px 35px rgba(212, 160, 23, 0.35); }
+}
+
+@keyframes brassShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
 .fade-in {
   animation: fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
+/* ===================================
+   SECTION UTILITIES
+   =================================== */
 .section-padding {
   padding: 100px 0;
 }
@@ -117,9 +257,84 @@ button {
   font-size: 2.5rem;
   color: var(--primary-red);
   margin-bottom: 15px;
+  position: relative;
 }
 
-/* Mobile Font Scaling */
+.section-subtitle {
+  color: var(--terracotta);
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-subtitle::before,
+.section-subtitle::after {
+  content: '◈';
+  font-size: 0.6em;
+  color: var(--turmeric-gold);
+}
+
+.section-lead {
+  font-size: 1.25rem;
+  opacity: 0.7;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===================================
+   AIPAN-STYLE DECORATIVE BORDER
+   =================================== */
+.aipan-border-top {
+  position: relative;
+}
+
+.aipan-border-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--turmeric-gold) 15%,
+    var(--terracotta) 35%,
+    var(--primary-red) 50%,
+    var(--terracotta) 65%,
+    var(--turmeric-gold) 85%,
+    transparent 100%
+  );
+  border-radius: 2px;
+}
+
+/* ===================================
+   BRASS SHIMMER EFFECT
+   =================================== */
+.brass-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--brass-dark) 0%,
+    var(--brass-light) 25%,
+    #E8C862 50%,
+    var(--brass-light) 75%,
+    var(--brass-dark) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: brassShimmer 4s ease-in-out infinite;
+}
+
+/* ===================================
+   MOBILE SCALING
+   =================================== */
 @media (max-width: 768px) {
   h1 { font-size: 2.2rem; }
   h2 { font-size: 1.8rem; }
@@ -127,29 +342,32 @@ button {
   .container { padding: 0 15px; }
 }
 
-/* WhatsApp Float Premium */
+/* ===================================
+   WHATSAPP FLOAT
+   =================================== */
 .whatsapp-float-premium {
   position: fixed;
-  bottom: 100px; /* Above sticky bar with more buffer */
+  bottom: 100px;
   right: 20px;
-  background-color: #25d366;
+  background: linear-gradient(135deg, #25d366, #128C7E);
   color: white;
-  padding: 10px 20px;
+  padding: 12px 22px;
   border-radius: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   text-decoration: none;
   font-weight: 700;
-  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
   z-index: 1000;
   transition: var(--transition);
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .whatsapp-float-premium:hover {
   transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 15px 40px rgba(37, 211, 102, 0.45);
 }
 
 .whatsapp-float-premium img {
@@ -162,12 +380,18 @@ button {
   letter-spacing: 0.5px;
 }
 
-/* Festive Utilities */
+/* ===================================
+   FESTIVE UTILITIES
+   =================================== */
 .text-maroon { color: var(--primary-red); }
 .text-haldi { color: var(--haldi-yellow); }
 .text-mehendi { color: var(--mehendi-green); }
+.text-terracotta { color: var(--terracotta); }
+.text-gold { color: var(--turmeric-gold); }
 .bg-maroon { background-color: var(--primary-red); }
 .bg-haldi { background-color: var(--haldi-yellow); }
+.bg-cream { background-color: var(--cream-base); }
+.bg-parchment { background-color: var(--parchment); }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

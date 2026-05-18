@@ -1,3 +1,7 @@
+/* ===================================
+   HERO — Immersive Gujarati Overhaul
+   =================================== */
+
 .hero-section {
   position: relative;
   height: 100vh;
@@ -23,20 +27,29 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 10s linear;
+  transition: transform 12s linear;
 }
 
 .hero-section:hover .hero-bg-img {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
+/* Overlay with Bandhani-infused gradient */
 .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7));
+  background:
+    radial-gradient(circle, rgba(212, 160, 23, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom,
+      rgba(139, 29, 34, 0.5) 0%,
+      rgba(0, 0, 0, 0.25) 40%,
+      rgba(0, 0, 0, 0.35) 70%,
+      rgba(139, 29, 34, 0.65) 100%
+    );
+  background-size: 20px 20px, 100% 100%;
   z-index: 2;
 }
 
@@ -45,31 +58,40 @@
   z-index: 3;
 }
 
+/* ── Gujarati Greeting ── */
+.hero-gujarati-greeting {
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  color: var(--turmeric-gold);
+  margin-bottom: 8px;
+  letter-spacing: 4px;
+  opacity: 0.9;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Tag Badge with shimmer ── */
 .hero-tag-badge {
   display: inline-block;
-  background-color: var(--haldi-yellow);
+  background: linear-gradient(135deg, var(--turmeric-gold), var(--haldi-yellow), var(--turmeric-gold));
+  background-size: 200% 100%;
+  animation: brassShimmer 4s ease-in-out infinite;
   color: var(--primary-red);
-  padding: 8px 20px;
+  padding: 10px 24px;
   border-radius: 50px;
   font-weight: 700;
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-bottom: 25px;
-  animation: slideDown 0.8s ease-out forwards;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(212, 160, 23, 0.3);
 }
 
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+/* ── Headline ── */
 .hero-headline {
   font-family: var(--font-serif);
   font-size: clamp(3rem, 8vw, 5.5rem);
   line-height: 1.1;
   margin-bottom: 10px;
-  text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
 }
 
 .hero-headline span {
@@ -78,8 +100,15 @@
   font-weight: 400;
   font-size: 0.6em;
   opacity: 0.9;
+  background: linear-gradient(90deg, #fff, var(--haldi-yellow), #fff);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: brassShimmer 6s ease-in-out infinite;
 }
 
+/* ── Tagline ── */
 .hero-tagline-sub {
   font-family: var(--font-sans);
   font-size: 1.25rem;
@@ -87,23 +116,27 @@
   text-transform: uppercase;
   margin-bottom: 40px;
   opacity: 0.9;
-  color: var(--haldi-yellow);
+  color: var(--turmeric-gold);
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* ── USP Row — Glassmorphism ── */
 .hero-usp-row {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 30px;
   margin-bottom: 50px;
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(5px);
-  padding: 15px 30px;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255, 248, 240, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 18px 35px;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 160, 23, 0.2);
   max-width: fit-content;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
 .usp-item {
@@ -116,20 +149,21 @@
 .usp-divider {
   width: 1px;
   height: 25px;
-  background: rgba(255,255,255,0.3);
+  background: linear-gradient(to bottom, transparent, rgba(212, 160, 23, 0.5), transparent);
 }
 
+/* ── CTA Button ── */
 .hero-actions {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.btn-primary-large {
-  background-color: var(--primary-red);
+.btn-hero-cta {
+  background: var(--gradient-terracotta);
   color: var(--text-light);
-  padding: 20px 45px;
-  border-radius: 4px;
+  padding: 20px 48px;
+  border-radius: 10px;
   font-weight: 700;
   font-size: 1.2rem;
   letter-spacing: 1px;
@@ -137,22 +171,42 @@
   align-items: center;
   gap: 12px;
   transition: var(--transition);
-  border: 1px solid var(--primary-red);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(139, 29, 34, 0.35);
+  animation: warmGlow 3s ease-in-out infinite;
 }
 
-.btn-primary-large:hover {
-  background-color: transparent;
-  backdrop-filter: blur(10px);
-  padding: 20px 60px;
+.btn-hero-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 168, 67, 0.25), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn-hero-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(139, 29, 34, 0.45);
+  padding: 20px 58px;
+}
+
+.btn-hero-cta:hover::before {
+  left: 100%;
 }
 
 .hero-urgency-note {
   margin-top: 15px;
   font-size: 0.9rem;
   font-style: italic;
-  opacity: 0.8;
+  opacity: 0.75;
+  color: rgba(255, 255, 255, 0.85);
 }
 
+/* ── Scroll Indicator — Diya ── */
 .hero-scroll-indicator {
   position: absolute;
   bottom: 40px;
@@ -163,41 +217,18 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  opacity: 0.7;
+  opacity: 0.75;
+  animation: floatGentle 3s ease-in-out infinite;
 }
 
 .hero-scroll-indicator span {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 2px;
+  color: var(--turmeric-gold);
 }
 
-.mouse {
-  width: 25px;
-  height: 45px;
-  border: 2px solid white;
-  border-radius: 20px;
-  position: relative;
-}
-
-.wheel {
-  width: 4px;
-  height: 8px;
-  background: white;
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 2px;
-  animation: scrollMouse 2s infinite ease-in-out;
-}
-
-@keyframes scrollMouse {
-  0% { top: 8px; opacity: 1; }
-  100% { top: 25px; opacity: 0; }
-}
-
-/* Responsive */
+/* ── Responsive ── */
 @media (max-width: 992px) {
   .hero-usp-row {
     flex-direction: column;
@@ -216,5 +247,11 @@
   .hero-tagline-sub {
     font-size: 1rem;
     letter-spacing: 2px;
+  }
+  .hero-gujarati-greeting {
+    font-size: 1.2rem;
+  }
+  .hero-section {
+    min-height: 650px;
   }
 }

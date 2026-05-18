@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Calendar, Users, ArrowRight } from 'lucide-react'
+import { PaisleyCorner, DiyaIcon } from './GujaratiDecorations'
 import supperClubImg from '../assets/supper-club.png'
 import './Hero.css'
 
@@ -12,15 +13,23 @@ const Hero = () => {
         <div className="hero-overlay"></div>
       </div>
       
+      {/* Decorative Paisley Corners */}
+      <PaisleyCorner position="top-left" />
+      <PaisleyCorner position="top-right" />
+      <PaisleyCorner position="bottom-left" />
+      <PaisleyCorner position="bottom-right" />
+      
       <div className="container hero-container">
         <div className="hero-content fade-in">
           <div className="hero-tag-badge">
             <span>Only 8 Seats Per Night</span>
           </div>
           
+          <p className="hero-gujarati-greeting gujarati-text">જય શ્રી કૃષ્ણ</p>
+          
           <h1 className="hero-headline">
-            Jai Shree Krishna<br />
-            <span>Welcome to Jamanvaaar</span>
+            Welcome to<br />
+            <span>Jamanvaaar</span>
           </h1>
           
           <p className="hero-tagline-sub">
@@ -40,7 +49,7 @@ const Hero = () => {
           </div>
           
           <div className="hero-actions">
-            <Link to="/contact" className="btn-primary-large">
+            <Link to="/contact" className="btn-hero-cta">
               Reserve Your Seat <ArrowRight size={20} />
             </Link>
             <p className="hero-urgency-note">Hurry! Seats fill up 2 weeks in advance.</p>
@@ -49,9 +58,7 @@ const Hero = () => {
       </div>
       
       <div className="hero-scroll-indicator">
-        <div className="mouse">
-          <div className="wheel"></div>
-        </div>
+        <DiyaIcon size={28} className="animated" />
         <span>Explore the Experience</span>
       </div>
     </section>

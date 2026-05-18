@@ -1,5 +1,6 @@
 import React from 'react'
 import { Home, Users, Utensils, Heart } from 'lucide-react'
+import { RangoliDivider, ThaliIllustration, DhoklaIllustration } from './GujaratiDecorations'
 import './ExperienceFlow.css'
 
 const ExperienceFlow = () => {
@@ -27,17 +28,22 @@ const ExperienceFlow = () => {
   ]
 
   return (
-    <section id="experience" className="experience-section section-padding">
+    <section id="experience" className="experience-section section-padding bandhani-bg">
+      {/* Decorative Food Watermarks */}
+      <ThaliIllustration className="watermark-left" />
+      <DhoklaIllustration className="watermark-center-right" />
+
       <div className="container">
         <div className="section-header text-center fade-in">
           <h4 className="section-subtitle">The Jamanvaaar Journey</h4>
           <h2 className="section-title">An Evening Like No Other</h2>
           <p className="section-lead">Experience the soulful essence of Gujarati hospitality in 4 simple steps.</p>
+          <RangoliDivider className="compact" />
         </div>
 
         <div className="experience-grid">
           {steps.map((step, index) => (
-            <div key={index} className="experience-card fade-in" style={{animationDelay: `${index * 0.2}s`}}>
+            <div key={index} className="experience-card aipan-border-top fade-in" style={{animationDelay: `${index * 0.2}s`}}>
               <div className="step-number">{index + 1}</div>
               <div className="step-icon-box">
                 {step.icon}
@@ -51,6 +57,7 @@ const ExperienceFlow = () => {
 
         <div className="experience-cta text-center fade-in">
           <p>"Sachu kav chu JALSO PADI JASE!!"</p>
+          <span className="gujarati-accent">સાચું કહું છું, જલસો પડી જશે!</span>
         </div>
       </div>
     </section>

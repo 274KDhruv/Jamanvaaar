@@ -1,12 +1,83 @@
+/* ===================================
+   HOME PAGE — Cultural Warmth
+   =================================== */
+
 .home-page {
-  background-color: var(--bg-white);
+  background-color: var(--cream-base);
   padding: 100px 0 0;
 }
 
+/* ── Reviews Section ── */
+.reviews-section {
+  background: var(--cream-base);
+}
+
+.review-card {
+  padding: 50px 40px 40px;
+  background: var(--bg-white);
+  border-radius: 20px;
+  margin-top: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 15px 50px rgba(139, 29, 34, 0.06);
+  border: 1px solid rgba(212, 160, 23, 0.1);
+  position: relative;
+}
+
+/* Aipan-style top border on review card */
+.review-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--turmeric-gold) 20%,
+    var(--terracotta) 50%,
+    var(--turmeric-gold) 80%,
+    transparent 100%
+  );
+  border-radius: 20px 20px 0 0;
+}
+
+.review-text {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--text-dark);
+  opacity: 0.85;
+  margin-bottom: 25px;
+}
+
+.review-author {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.review-name {
+  font-weight: 700;
+  color: var(--primary-red);
+  font-size: 1.1rem;
+}
+
+.review-gujarati {
+  font-size: 0.9rem;
+  color: var(--turmeric-gold);
+  opacity: 0.7;
+}
+
+/* ── Final CTA Section ── */
 .final-cta {
-  background: var(--primary-red);
+  background: linear-gradient(135deg, var(--primary-red), var(--terracotta-deep), var(--primary-red));
   color: var(--text-light);
   padding: 120px 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .final-cta .section-title {
@@ -15,31 +86,32 @@
 }
 
 .final-cta .section-lead {
-  color: var(--haldi-yellow);
+  color: var(--turmeric-gold);
   font-weight: 700;
   letter-spacing: 2px;
   font-size: 1.1rem;
 }
 
-.btn-primary-large {
+/* Gold shimmer CTA button */
+.btn-final-cta {
   display: inline-block;
-  background-color: var(--haldi-yellow);
+  background: linear-gradient(135deg, var(--turmeric-gold), var(--haldi-yellow), var(--turmeric-gold));
+  background-size: 200% 100%;
+  animation: brassShimmer 4s ease-in-out infinite;
   color: var(--text-dark);
   padding: 20px 60px;
-  border-radius: 4px;
+  border-radius: 10px;
   font-weight: 700;
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   transition: var(--transition);
+  box-shadow: 0 8px 30px rgba(212, 160, 23, 0.3);
 }
 
-.btn-primary-large:hover {
-  background-color: transparent;
-  backdrop-filter: blur(10px);
-  padding: 20px 75px;
-  color: var(--text-light);
-  border: 1px solid var(--text-light);
+.btn-final-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(212, 160, 23, 0.5);
 }
 
 /* Base Styles */
@@ -51,5 +123,18 @@ section {
 @media (max-width: 768px) {
   .final-cta {
     padding: 80px 0;
+  }
+  
+  .review-card {
+    padding: 40px 25px 30px;
+  }
+  
+  .review-text {
+    font-size: 1.15rem;
+  }
+  
+  .btn-final-cta {
+    padding: 16px 40px;
+    font-size: 1rem;
   }
 }

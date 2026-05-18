@@ -1,5 +1,6 @@
 import React from 'react'
 import { Users, Home, MapPin, Sparkles } from 'lucide-react'
+import { MatkaIllustration } from './GujaratiDecorations'
 import './WhyJamanvaaar.css'
 
 const WhyJamanvaaar = () => {
@@ -28,6 +29,9 @@ const WhyJamanvaaar = () => {
 
   return (
     <section className="why-section section-padding">
+      {/* Decorative Matka clay pot watermark */}
+      <MatkaIllustration className="watermark-right" />
+
       <div className="container why-grid">
         <div className="why-content fade-in">
           <h4 className="section-subtitle">Why Jamanvaaar?</h4>

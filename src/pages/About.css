@@ -1,11 +1,19 @@
+/* ===================================
+   ABOUT PAGE — Heritage Design
+   =================================== */
+
 .about-page-premium {
-  background-color: var(--bg-white);
+  background-color: var(--cream-base);
 }
 
+/* Hero with Bandhani pattern overlay */
 .about-hero-premium {
-  background: linear-gradient(rgba(139, 29, 34, 0.7), rgba(0,0,0,0.4)), url('../assets/supper-club.png');
-  background-size: cover;
-  background-position: center;
+  background: 
+    radial-gradient(circle, rgba(212, 160, 23, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(139, 29, 34, 0.72), rgba(0,0,0,0.4)),
+    url('../assets/supper-club.png');
+  background-size: 18px 18px, 100% 100%, cover;
+  background-position: 0 0, center, center;
   height: 60vh;
   min-height: 400px;
   display: flex;
@@ -19,6 +27,30 @@
   max-width: 800px;
 }
 
+/* Quality section — warm cream with grain */
+.quality-promise {
+  position: relative;
+  overflow: hidden;
+}
+
+.quality-promise::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+.quality-promise > .container {
+  position: relative;
+  z-index: 1;
+}
+
 .quality-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -30,13 +62,19 @@
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+  box-shadow: 0 30px 60px rgba(139, 29, 34, 0.1);
+  border: 2px solid rgba(212, 160, 23, 0.1);
 }
 
 .quality-visual img {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 18px;
   display: block;
+  transition: transform 0.6s ease;
+}
+
+.quality-visual:hover img {
+  transform: scale(1.03);
 }
 
 .quality-story p {
@@ -50,7 +88,7 @@
   background: var(--bg-off-white);
 }
 
-/* Responsive */
+/* ── Responsive ── */
 @media (max-width: 992px) {
   .quality-grid {
     grid-template-columns: 1fr;

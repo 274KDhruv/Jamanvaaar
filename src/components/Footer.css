@@ -1,10 +1,49 @@
+/* ===================================
+   FOOTER — Cultural Heritage Footer
+   =================================== */
+
 .main-footer {
-  background: var(--text-dark);
+  background: linear-gradient(180deg, #2A0A0C 0%, #1A0505 100%);
   color: var(--text-light);
-  padding: 80px 0 20px;
+  padding: 30px 0 20px;
   position: relative;
+  overflow: hidden;
 }
 
+/* Bandhani pattern overlay */
+.main-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle, rgba(212, 160, 23, 0.04) 1px, transparent 1px),
+    radial-gradient(circle, rgba(212, 160, 23, 0.025) 1px, transparent 1px);
+  background-size: 22px 22px, 16px 16px;
+  background-position: 0 0, 8px 11px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.main-footer > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Top Ornament ── */
+.footer-ornament {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 40px;
+}
+
+.footer-ornament .rangoli-divider {
+  opacity: 0.5;
+}
+
+/* ── Grid ── */
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1.5fr;
@@ -14,65 +53,98 @@
 
 .footer-col h4 {
   font-family: var(--font-serif);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   margin-bottom: 25px;
-  color: var(--text-light);
+  color: var(--turmeric-gold);
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer-col h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--brass-light), transparent);
 }
 
 .footer-logo {
   font-family: var(--font-serif);
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+  color: var(--text-light);
+}
+
+.footer-gujarati {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--turmeric-gold);
+  margin-bottom: 18px;
+  opacity: 0.7;
 }
 
 .brand-col p {
-  opacity: 0.7;
+  opacity: 0.6;
   max-width: 250px;
   margin-bottom: 25px;
+  line-height: 1.6;
 }
 
+/* Social Links — Brass/Gold hover */
 .social-links {
   display: flex;
   gap: 15px;
 }
 
 .social-links a {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: var(--transition);
+  border: 1px solid rgba(212, 160, 23, 0.1);
 }
 
 .social-links a:hover {
-  background: var(--primary-red);
+  background: linear-gradient(135deg, var(--turmeric-gold), var(--copper-accent));
+  color: var(--text-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(212, 160, 23, 0.3);
+  border-color: transparent;
 }
 
+/* ── Footer Links ── */
 .footer-col ul li {
   margin-bottom: 15px;
   display: flex;
   align-items: center;
   gap: 10px;
-  opacity: 0.7;
+  opacity: 0.6;
   transition: var(--transition);
 }
 
-.footer-col ul li a:hover {
+.footer-col ul li:hover {
   opacity: 1;
-  color: var(--primary-red);
 }
 
+.footer-col ul li a:hover {
+  color: var(--turmeric-gold);
+}
+
+/* ── Footer Bottom ── */
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(212, 160, 23, 0.1);
   padding-top: 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 0.9rem;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .footer-legal {
@@ -82,9 +154,10 @@
 
 .footer-legal a:hover {
   text-decoration: underline;
+  color: var(--turmeric-gold);
 }
 
-/* Responsive */
+/* ── Responsive ── */
 @media (max-width: 992px) {
   .footer-grid {
     grid-template-columns: 1fr 1fr;

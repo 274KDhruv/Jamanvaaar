@@ -1,5 +1,6 @@
 import React from 'react'
 import { Utensils, Coffee, IceCream } from 'lucide-react'
+import { JalebiIllustration, ThaliIllustration } from './GujaratiDecorations'
 import './SampleMenu.css'
 
 const SampleMenu = () => {
@@ -38,6 +39,10 @@ const SampleMenu = () => {
 
   return (
     <section id="menu" className="sample-menu-section section-padding">
+      {/* Decorative Food Watermarks */}
+      <JalebiIllustration className="watermark-center-left" />
+      <ThaliIllustration className="watermark-center-right" />
+
       <div className="container">
         <div className="section-header text-center fade-in">
           <h4 className="section-subtitle">Menu Preview</h4>

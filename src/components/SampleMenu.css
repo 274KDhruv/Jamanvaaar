@@ -1,8 +1,15 @@
+/* ===================================
+   SAMPLE MENU — Regal Thali Cards
+   =================================== */
+
 .sample-menu-section {
-  background-color: var(--bg-white);
+  background-color: var(--cream-base);
   padding: 100px 0;
+  position: relative;
+  overflow: hidden;
 }
 
+/* ── Grid ── */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -10,51 +17,77 @@
   position: relative;
 }
 
+/* Menu cards — Parchment background with Aipan border */
 .menu-category-card {
-  padding: 30px;
-  background: var(--bg-off-white);
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  padding: 35px 28px;
+  background: var(--bg-white);
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(139, 29, 34, 0.05);
   transition: var(--transition);
+  position: relative;
+  border: 1px solid rgba(212, 160, 23, 0.08);
+}
+
+/* Aipan-style top border */
+.menu-category-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--turmeric-gold) 20%,
+    var(--terracotta) 50%,
+    var(--turmeric-gold) 80%,
+    transparent 100%
+  );
+  border-radius: 16px 16px 0 0;
 }
 
 .menu-category-card:hover {
-  transform: translateY(-10px);
-  background: var(--primary-red);
-  color: var(--text-light);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(212, 160, 23, 0.12);
+  border-color: rgba(212, 160, 23, 0.2);
 }
 
 .menu-category-card:hover .category-icon {
-  background: var(--haldi-yellow);
+  background: linear-gradient(135deg, var(--turmeric-gold), var(--haldi-yellow));
   color: var(--primary-red);
+  transform: scale(1.05);
 }
 
+/* ── Category Header ── */
 .category-header {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-bottom: 25px;
+  margin-bottom: 28px;
 }
 
+/* Brass-coin icon */
 .category-icon {
   width: 50px;
   height: 50px;
-  background: white;
-  color: var(--primary-red);
+  background: linear-gradient(135deg, var(--brass-light), var(--copper-accent));
+  color: var(--text-light);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(184, 115, 51, 0.25);
   transition: var(--transition);
 }
 
 .category-header h3 {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   font-weight: 700;
+  color: var(--primary-red);
 }
 
+/* ── Menu Items ── */
 .menu-item-list {
   display: flex;
   flex-direction: column;
@@ -75,33 +108,48 @@
 .item-name {
   font-family: var(--font-sans);
   font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  color: var(--text-dark);
 }
 
+/* Decorative diya-dot separator */
 .item-dots {
   flex: 1;
-  border-bottom: 1px dotted rgba(0,0,0,0.1);
-  margin: 0 10px;
+  margin: 0 12px;
+  height: 1px;
+  position: relative;
+  border: none;
+  background: none;
 }
 
-.menu-category-card:hover .item-dots {
-  border-bottom: 1px dotted rgba(255,255,255,0.3);
+.item-dots::before {
+  content: '· · · · · · · · · · · · ·';
+  position: absolute;
+  top: -6px;
+  left: 0;
+  right: 0;
+  font-size: 0.7rem;
+  color: var(--turmeric-gold);
+  opacity: 0.4;
+  letter-spacing: 2px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .item-desc {
-  font-size: 0.95rem;
-  opacity: 0.7;
-  line-height: 1.4;
+  font-size: 0.92rem;
+  opacity: 0.65;
+  line-height: 1.5;
 }
 
 .menu-note {
   margin-top: 50px;
   font-style: italic;
-  opacity: 0.6;
+  opacity: 0.55;
 }
 
-/* Responsive */
+/* ── Responsive ── */
 @media (max-width: 1024px) {
   .menu-grid {
     grid-template-columns: repeat(2, 1fr);

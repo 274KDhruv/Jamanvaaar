@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Hero from '../components/Hero.jsx'
 import ExperienceFlow from '../components/ExperienceFlow.jsx'
 import FoodShowcase from '../components/FoodShowcase.jsx'
@@ -6,6 +7,7 @@ import WhyJamanvaaar from '../components/WhyJamanvaaar.jsx'
 import SampleMenu from '../components/SampleMenu.jsx'
 import Occasions from '../components/Occasions.jsx'
 import FounderSection from '../components/FounderSection.jsx'
+import { RangoliDivider, DecorativeQuote } from '../components/GujaratiDecorations'
 import './Home.css'
 
 const Home = () => {
@@ -24,22 +26,27 @@ const Home = () => {
         <div className="container text-center">
           <h4 className="section-subtitle">Guest Stories</h4>
           <h2 className="section-title">Real Evenings at Jamanvaaar</h2>
-          <div className="reviews-placeholder" style={{padding: '40px', background: 'var(--bg-off-white)', borderRadius: '12px', marginTop: '40px'}}>
-             <p className="section-lead">"The most authentic Gujarati experience in Mumbai. 8 people, one table, endless stories."</p>
-             <h4 style={{marginTop: '20px', color: 'var(--primary-red)'}}>— Shradha & Rahul</h4>
+          <RangoliDivider className="compact" />
+          <div className="review-card">
+            <DecorativeQuote />
+            <p className="review-text">"The most authentic Gujarati experience in Mumbai. 8 people, one table, endless stories."</p>
+            <div className="review-author">
+              <span className="review-name">— Shradha & Rahul</span>
+              <span className="review-gujarati gujarati-text">અદ્ભુત અનુભવ</span>
+            </div>
           </div>
         </div>
       </section>
       
       {/* Final Conversion Section */}
-      <section className="final-cta section-padding fade-in">
+      <section className="final-cta section-padding fade-in bandhani-bg">
         <div className="container text-center">
           <h2 className="section-title">Ready for the Jamanvaaar Experience?</h2>
           <p className="section-lead">Starting ₹XXXX per guest. Only 8 seats available per night.</p>
           <div style={{marginTop: '40px'}}>
-            <a href="/contact" className="btn-primary-large" style={{margin: '0 auto'}}>
+            <Link to="/contact" className="btn-final-cta">
               Reserve Your Seat Now
-            </a>
+            </Link>
           </div>
         </div>
       </section>

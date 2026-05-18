@@ -1,0 +1,232 @@
+/* ===================================
+   GUJARATI DECORATIVE ELEMENTS
+   =================================== */
+
+/* ── Rangoli Divider ── */
+.rangoli-divider {
+  width: 100%;
+  max-width: 500px;
+  margin: 30px auto;
+  opacity: 0.8;
+  transition: opacity 0.4s ease;
+}
+
+.rangoli-divider svg {
+  width: 100%;
+  height: auto;
+}
+
+.rangoli-divider:hover {
+  opacity: 1;
+}
+
+.rangoli-divider.wide {
+  max-width: 650px;
+}
+
+.rangoli-divider.compact {
+  max-width: 300px;
+  margin: 20px auto;
+}
+
+/* ── Paisley Corner ── */
+.paisley-corner {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.5;
+  transition: opacity 0.4s ease;
+}
+
+.paisley-top-left {
+  top: 0;
+  left: 0;
+}
+
+.paisley-top-right {
+  top: 0;
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.paisley-bottom-left {
+  bottom: 0;
+  left: 0;
+  transform: scaleY(-1);
+}
+
+.paisley-bottom-right {
+  bottom: 0;
+  right: 0;
+  transform: scale(-1, -1);
+}
+
+.paisley-corner svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Diya Icon ── */
+.diya-icon {
+  transition: var(--transition-fast);
+}
+
+.diya-icon:hover {
+  filter: drop-shadow(0 0 8px rgba(212, 160, 23, 0.5));
+}
+
+/* Animated flame flicker */
+.diya-icon.animated path:first-child {
+  animation: flameFlicker 2s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+@keyframes flameFlicker {
+  0%, 100% { transform: scaleX(1); opacity: 0.9; }
+  25% { transform: scaleX(0.9); opacity: 0.8; }
+  50% { transform: scaleX(1.05); opacity: 1; }
+  75% { transform: scaleX(0.95); opacity: 0.85; }
+}
+
+/* ── Aipan Border Strip ── */
+.aipan-strip {
+  width: 100%;
+  overflow: hidden;
+}
+
+.aipan-strip svg {
+  width: 100%;
+  height: 12px;
+}
+
+/* ── Decorative Quote ── */
+.decorative-quote {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .paisley-corner {
+    width: 60px;
+    height: 60px;
+    opacity: 0.3;
+  }
+  
+  .rangoli-divider {
+    max-width: 280px;
+  }
+  
+  .rangoli-divider.wide {
+    max-width: 350px;
+  }
+}
+
+/* ── Lightly Drawn Food Illustrations (Watermarks) ── */
+.food-illustration {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  width: 240px;
+  height: 240px;
+  transition: transform 1.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease;
+  filter: drop-shadow(0 4px 12px rgba(212, 160, 23, 0.05));
+}
+
+.food-illustration svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Floating micro-animations to make them feel alive */
+.thali-draw {
+  animation: floatIllustration 8s ease-in-out infinite;
+}
+
+.dhokla-draw {
+  animation: floatIllustration 9s ease-in-out infinite 1s;
+}
+
+.matka-draw {
+  animation: floatIllustration 10s ease-in-out infinite 2s;
+}
+
+.jalebi-draw {
+  animation: floatIllustration 7s ease-in-out infinite 0.5s;
+}
+
+@keyframes floatIllustration {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+/* Placement helpers for background watermarks */
+.watermark-left {
+  left: -50px;
+  top: 15%;
+  opacity: 0.45;
+}
+
+.watermark-right {
+  right: -50px;
+  top: 40%;
+  opacity: 0.45;
+}
+
+.watermark-center-left {
+  left: -80px;
+  bottom: 10%;
+  opacity: 0.4;
+}
+
+.watermark-center-right {
+  right: -80px;
+  bottom: 25%;
+  opacity: 0.4;
+}
+
+/* hover states inside parent sections to shift/reveal them slightly */
+section:hover .food-illustration {
+  opacity: 0.65;
+}
+
+.experience-section:hover .thali-draw {
+  transform: scale(1.05) rotate(5deg) translateY(-5px);
+}
+
+.sample-menu-section:hover .jalebi-draw {
+  transform: scale(1.05) rotate(-5deg) translateY(-5px);
+}
+
+.why-section:hover .matka-draw {
+  transform: scale(1.05) rotate(4deg) translateY(-5px);
+}
+
+/* Responsive Scaling for Watermarks */
+@media (max-width: 1200px) {
+  .food-illustration {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .food-illustration {
+    width: 130px;
+    height: 130px;
+    opacity: 0.25;
+  }
+  
+  .watermark-left { left: -30px; }
+  .watermark-right { right: -30px; }
+  .watermark-center-left { left: -40px; }
+  .watermark-center-right { right: -40px; }
+  
+  section:hover .food-illustration {
+    opacity: 0.35;
+  }
+}
+

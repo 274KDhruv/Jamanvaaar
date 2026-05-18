@@ -1,15 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Instagram, Facebook, Phone, Mail } from 'lucide-react'
+import { RangoliDivider } from './GujaratiDecorations'
 import './Footer.css'
 
 const Footer = () => {
   return (
     <footer className="main-footer">
+      {/* Decorative ornament at top */}
+      <div className="footer-ornament">
+        <RangoliDivider className="compact" />
+      </div>
+      
       <div className="container">
         <div className="footer-grid">
           <div className="footer-col brand-col">
             <h3 className="footer-logo">Jamanvaaar</h3>
+            <span className="footer-gujarati gujarati-text">જમણવાર</span>
             <p>Authentic Gujarati Dining Experience in the heart of Mumbai.</p>
             <div className="social-links">
               <a href="#"><Instagram size={20} /></a>

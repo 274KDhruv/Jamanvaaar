@@ -1,7 +1,17 @@
+/* ===================================
+   EXPERIENCE FLOW — Gujarati Journey
+   =================================== */
+
 .experience-section {
-  background-color: var(--bg-white);
+  background-color: var(--cream-base);
   padding: 100px 0;
   position: relative;
+  overflow: hidden;
+}
+
+.experience-section > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .section-header {
@@ -9,7 +19,7 @@
 }
 
 .section-subtitle {
-  color: var(--primary-red);
+  color: var(--terracotta);
   font-family: var(--font-sans);
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -32,6 +42,7 @@
   margin: 0 auto;
 }
 
+/* ── Experience Grid ── */
 .experience-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -43,68 +54,83 @@
   text-align: center;
   position: relative;
   z-index: 2;
-  padding: 40px 20px;
-  background: var(--bg-off-white);
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  padding: 45px 22px 35px;
+  background: var(--bg-white);
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(139, 29, 34, 0.06);
   transition: var(--transition);
+  border: 1px solid rgba(212, 160, 23, 0.08);
 }
 
 .experience-card:hover {
   transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(212, 160, 23, 0.15);
+  border-color: rgba(212, 160, 23, 0.25);
+}
+
+.experience-card:hover .step-icon-box {
+  background: linear-gradient(135deg, var(--turmeric-gold), var(--haldi-yellow));
+  color: var(--primary-red);
+  transform: scale(1.05);
+}
+
+.experience-card:hover .step-number {
   background: var(--primary-red);
   color: var(--text-light);
 }
 
-.experience-card:hover .step-icon-box {
-  background: var(--haldi-yellow);
-  color: var(--primary-red);
-}
-
+/* ── Step Number — Brass Coin ── */
 .step-number {
   position: absolute;
-  top: -20px;
+  top: -18px;
   left: 50%;
   transform: translateX(-50%);
-  width: 40px;
-  height: 40px;
-  background: var(--haldi-yellow);
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, var(--brass-light), var(--copper-accent), var(--brass-light));
   color: var(--text-dark);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  border: 4px solid var(--bg-white);
+  font-size: 0.9rem;
+  border: 3px solid var(--cream-base);
   z-index: 3;
+  box-shadow: 0 4px 12px rgba(184, 115, 51, 0.3);
+  transition: var(--transition);
 }
 
+/* ── Icon Box ── */
 .step-icon-box {
   width: 90px;
   height: 90px;
-  background: white;
-  color: var(--primary-red);
+  background: var(--cream-base);
+  color: var(--terracotta);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 25px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 25px rgba(139, 29, 34, 0.08);
   transition: var(--transition);
+  border: 2px solid rgba(212, 160, 23, 0.1);
 }
 
 .step-title {
   font-family: var(--font-serif);
-  font-size: 1.75rem;
+  font-size: 1.7rem;
   margin-bottom: 15px;
+  color: var(--primary-red);
 }
 
 .step-desc {
   font-size: 1.05rem;
   line-height: 1.6;
-  opacity: 0.8;
+  opacity: 0.75;
 }
 
+/* ── CTA Quote ── */
 .experience-cta {
   margin-top: 60px;
   font-family: var(--font-serif);
@@ -113,7 +139,14 @@
   color: var(--primary-red);
 }
 
-/* Responsive */
+.experience-cta .gujarati-accent {
+  display: block;
+  margin-top: 8px;
+  font-size: 1rem;
+  font-style: normal;
+}
+
+/* ── Responsive ── */
 @media (max-width: 1024px) {
   .experience-grid {
     grid-template-columns: 1fr 1fr;

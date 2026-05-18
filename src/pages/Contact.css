@@ -1,5 +1,9 @@
+/* ===================================
+   CONTACT PAGE — Cultural Form Warmth
+   =================================== */
+
 .contact-page-premium {
-  background-color: var(--bg-white);
+  background-color: var(--cream-base);
   padding: 100px 0;
 }
 
@@ -16,7 +20,7 @@
 
 .contact-intro {
   font-size: 1.1rem;
-  line-height: 1.6;
+  line-height: 1.7;
   margin-bottom: 40px;
   opacity: 0.7;
 }
@@ -31,24 +35,42 @@
   display: flex;
   gap: 20px;
   align-items: flex-start;
+  padding: 8px;
+  border-radius: 12px;
+  transition: var(--transition);
 }
 
+.contact-premium-item:hover {
+  background: rgba(212, 160, 23, 0.04);
+}
+
+/* Brass-gold gradient icons */
 .contact-icon-premium {
-  width: 50px;
-  height: 50px;
-  background: rgba(139, 29, 34, 0.1);
-  color: var(--primary-red);
-  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, rgba(196, 89, 58, 0.1), rgba(212, 160, 23, 0.08));
+  color: var(--terracotta);
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  border: 1px solid rgba(212, 160, 23, 0.1);
+  transition: var(--transition);
+}
+
+.contact-premium-item:hover .contact-icon-premium {
+  background: linear-gradient(135deg, var(--terracotta), var(--turmeric-gold));
+  color: var(--text-light);
+  border-color: transparent;
+  box-shadow: 0 6px 18px rgba(196, 89, 58, 0.2);
 }
 
 .contact-text h4 {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   margin-bottom: 5px;
+  color: var(--primary-red);
 }
 
 .contact-text p {
@@ -58,60 +80,86 @@
 
 .availability {
   font-size: 0.8rem;
-  color: var(--haldi-yellow);
+  color: var(--mehendi-green);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
+/* Price card with rangoli ornament feel */
 .contact-cta-card {
   margin-top: 50px;
-  padding: 30px;
+  padding: 32px;
   background: var(--bg-white);
-  border-radius: 12px;
-  border-left: 5px solid var(--primary-red);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border-radius: 16px;
+  border-left: 4px solid transparent;
+  border-image: linear-gradient(to bottom, var(--turmeric-gold), var(--terracotta)) 1;
+  box-shadow: 0 10px 35px rgba(139, 29, 34, 0.06);
+  position: relative;
 }
 
 .contact-cta-card h3 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   margin-bottom: 10px;
+  color: var(--terracotta);
 }
 
 .price-tag {
   font-size: 1.5rem;
   color: var(--primary-red);
+  font-family: var(--font-serif);
 }
 
 .price-note {
-  font-size: 0.9rem;
-  opacity: 0.6;
+  font-size: 0.88rem;
+  opacity: 0.55;
   font-style: italic;
+  margin-top: 5px;
 }
 
+/* Form card — warm cream with Aipan border */
 .contact-form-side-premium {
-  background: white;
+  background: var(--bg-white);
   border-radius: 20px;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+  box-shadow: 0 40px 80px rgba(139, 29, 34, 0.08);
   padding: 50px;
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid rgba(212, 160, 23, 0.1);
   position: sticky;
   top: 150px;
+}
+
+/* Aipan top border */
+.contact-form-side-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--turmeric-gold) 20%,
+    var(--terracotta) 50%,
+    var(--turmeric-gold) 80%,
+    transparent 100%
+  );
+  border-radius: 20px 20px 0 0;
 }
 
 .form-title {
   font-family: var(--font-serif);
   font-size: 2rem;
   margin-bottom: 10px;
+  color: var(--primary-red);
 }
 
 .form-subtitle {
   font-size: 1rem;
-  opacity: 0.6;
+  opacity: 0.55;
   margin-bottom: 40px;
 }
 
-/* Responsive */
+/* ── Responsive ── */
 @media (max-width: 992px) {
   .contact-grid-premium {
     grid-template-columns: 1fr;
