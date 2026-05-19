@@ -15,8 +15,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+}
+
+.sticky-cta-bar.hidden {
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sticky-cta-bar.visible {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 /* Bandhani dot pattern overlay */
@@ -42,11 +53,6 @@
   width: 100%;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--turmeric-gold), var(--brass-light), var(--turmeric-gold), transparent);
-}
-
-/* Fix: make it fixed */
-.sticky-cta-bar {
-  position: fixed;
 }
 
 .sticky-cta-content {

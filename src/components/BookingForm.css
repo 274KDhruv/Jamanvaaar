@@ -141,3 +141,38 @@
     padding: 25px 18px;
   }
 }
+
+/* ── Checkbox Group ── */
+.booking-form .checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.booking-form .checkbox-group label {
+  display: inline;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  opacity: 0.8;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.booking-form .checkbox-group label a {
+  color: var(--primary-red);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.booking-form .checkbox-group label a:hover {
+  color: var(--terracotta);
+}
+
+.booking-form input[type="checkbox"] {
+  width: auto;
+  margin-top: 4px;
+  cursor: pointer;
+  accent-color: var(--primary-red);
+}
+

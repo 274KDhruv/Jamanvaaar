@@ -144,7 +144,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 0.9rem;
-  opacity: 0.5;
+  opacity: 0.85;
 }
 
 .footer-legal {
@@ -152,9 +152,16 @@
   gap: 20px;
 }
 
+.footer-legal a {
+  color: var(--text-light);
+  opacity: 0.75;
+  transition: var(--transition-fast);
+}
+
 .footer-legal a:hover {
-  text-decoration: underline;
+  opacity: 1;
   color: var(--turmeric-gold);
+  text-decoration: underline;
 }
 
 /* ── Responsive ── */

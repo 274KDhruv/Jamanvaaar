@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Calendar, Users, Phone, Mail, User, Clock } from 'lucide-react'
 import './BookingForm.css'
 
@@ -110,6 +111,17 @@ const BookingForm = () => {
             value={formData.message}
             onChange={handleChange}
           ></textarea>
+        </div>
+
+        <div className="checkbox-group">
+          <input 
+            type="checkbox" 
+            id="terms-agree" 
+            required 
+          />
+          <label htmlFor="terms-agree">
+            I agree to the <Link to="/terms" target="_blank" rel="noopener noreferrer">Terms & Conditions</Link> and <Link to="/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</Link>
+          </label>
         </div>
 
         <button type="submit" className="btn-primary btn-block">

@@ -4,6 +4,8 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Media from './pages/Media.jsx'
 import Contact from './pages/Contact.jsx'
+import Terms from './pages/Terms.jsx'
+import Privacy from './pages/Privacy.jsx'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
 import StickyCTA from './components/StickyCTA.jsx'
@@ -38,6 +40,8 @@ function App() {
             <Route path="/about-us" element={<About />} />
             <Route path="/media" element={<Media />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/privacy" element={<Privacy />} />
           </Routes>
         </main>
         <Footer />
