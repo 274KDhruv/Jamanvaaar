@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Phone, Mail, Instagram, MapPin, Clock, Menu, X } from 'lucide-react'
-import logo from '../assets/logo.png'
+import logo from '../assets/jamanvaaar-logo.jpg'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -21,7 +21,6 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'Experience', path: '/#experience' },
     { name: 'About Us', path: '/about-us' },
-    { name: 'Menu Preview', path: '/#menu' },
     { name: 'Gallery', path: '/media' },
     { name: 'Reviews', path: '/#reviews' },
     { name: 'Contact', path: '/contact' },
@@ -46,11 +45,6 @@ const Navbar = () => {
         <div className="container nav-content">
           <Link to="/" className="nav-logo">
             <img src={logo} alt="Jamanvaaar" />
-            <div className="logo-text-group">
-              <span className="logo-text">Jamanvaaar</span>
-              <span className="logo-tagline">Authentic Gujarati Dining</span>
-              <span className="logo-gujarati">જમણવાર</span>
-            </div>
           </Link>
           
           <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>

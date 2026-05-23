@@ -1,25 +1,28 @@
 import React from 'react'
-import { Sparkles, Heart, Users } from 'lucide-react'
+import { Home, Utensils, Users } from 'lucide-react'
 import './Occasions.css'
 
 const Occasions = () => {
   const occasions = [
     {
-      title: 'Birthdays',
-      icon: <Sparkles size={24} />,
-      desc: 'Celebrate your special day with a royal feast and intimate surroundings.',
+      title: 'Traditional Thali Experience',
+      icon: <Utensils size={24} />,
+      desc: 'Sit down to a 26-dish Gujarati thali served with warmth, ritual, and ghar nu swaad.',
+      tone: 'thali',
       link: '/contact'
     },
     {
-      title: 'Date Nights',
-      icon: <Heart size={24} />,
-      desc: 'A unique dining experience for couples, with candlelight and traditional flavor.',
+      title: 'Family Gatherings',
+      icon: <Home size={24} />,
+      desc: 'Bring your loved ones together around one table for stories, laughter, and a soulful Gujarati feast.',
+      tone: 'family',
       link: '/contact'
     },
     {
       title: 'Private Bookings',
       icon: <Users size={24} />,
       desc: 'Reserve the entire 8-seater table for your family or corporate gathering.',
+      tone: 'private',
       link: '/contact'
     }
   ]
@@ -36,7 +39,7 @@ const Occasions = () => {
         <div className="occasions-grid">
           {occasions.map((occ, index) => (
             <div key={index} className="occasion-card fade-in" style={{animationDelay: `${index * 0.2}s`}}>
-              <div className="occasion-icon">{occ.icon}</div>
+              <div className={`occasion-icon ${occ.tone}`}>{occ.icon}</div>
               <h3>{occ.title}</h3>
               <p>{occ.desc}</p>
               <a href={occ.link} className="btn-outline">Inquire Now</a>

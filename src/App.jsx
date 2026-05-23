@@ -34,7 +34,7 @@ function App() {
       <ScrollToHash />
       <div className="app">
         <Navbar />
-        <main style={{ paddingTop: '140px' }}>
+        <main className="site-main">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about-us" element={<About />} />

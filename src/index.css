@@ -87,6 +87,10 @@ button {
   padding: 0 20px;
 }
 
+.site-main {
+  padding-top: 123px;
+}
+
 /* ── Gujarati Text Accent ── */
 .gujarati-text {
   font-family: var(--font-gujarati);
@@ -340,6 +344,7 @@ button {
   h2 { font-size: 1.8rem; }
   .section-padding { padding: 60px 0; }
   .container { padding: 0 15px; }
+  .site-main { padding-top: 122px; }
 }
 
 /* ===================================

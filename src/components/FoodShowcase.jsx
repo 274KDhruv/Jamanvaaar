@@ -21,7 +21,6 @@ const FoodShowcase = () => {
     <section className="food-showcase-section section-padding">
       <div className="container">
         <div className="section-header text-center fade-in">
-          <h4 className="section-subtitle">Visual Storytelling</h4>
           <h2 className="section-title">What You'll Experience</h2>
           <p className="section-lead">A feast for the eyes before it reaches your plate.</p>
         </div>

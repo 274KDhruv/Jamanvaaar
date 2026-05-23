@@ -47,7 +47,7 @@ const SampleMenu = () => {
         <div className="section-header text-center fade-in">
           <h4 className="section-subtitle">Menu Preview</h4>
           <h2 className="section-title">A Taste of Tradition</h2>
-          <p className="section-lead">Every week, we curate a royal spread of over 24+ items, prepared with farm-fresh ingredients and generational love.</p>
+          <p className="section-lead">Every week, we curate a royal spread of 26 items, prepared with farm-fresh ingredients and generational love.</p>
         </div>
 
         <div className="menu-grid">

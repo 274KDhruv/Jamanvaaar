@@ -2,9 +2,9 @@
    EXPERIENCE FLOW — Gujarati Journey
    =================================== */
 
-.experience-section {
+.experience-section.section-padding {
   background-color: var(--cream-base);
-  padding: 100px 0;
+  padding: 100px 0 35px;
   position: relative;
   overflow: hidden;
 }
@@ -132,7 +132,7 @@
 
 /* ── CTA Quote ── */
 .experience-cta {
-  margin-top: 60px;
+  margin-top: 42px;
   font-family: var(--font-serif);
   font-style: italic;
   font-size: 1.5rem;
@@ -155,6 +155,10 @@
 }
 
 @media (max-width: 768px) {
+  .experience-section.section-padding {
+    padding: 60px 0 28px;
+  }
+
   .experience-grid {
     grid-template-columns: 1fr;
   }

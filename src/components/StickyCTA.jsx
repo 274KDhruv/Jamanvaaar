@@ -40,7 +40,7 @@ const StickyCTA = () => {
           <div className="sticky-divider"></div>
           <div className="sticky-item">
             <Users size={18} />
-            <span>Starting ₹XXXX per Guest</span>
+            <span>₹3150/- per Guest</span>
           </div>
         </div>
         

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Calendar, Users, ArrowRight } from 'lucide-react'
-import { PaisleyCorner, DiyaIcon } from './GujaratiDecorations'
+import { PaisleyCorner } from './GujaratiDecorations'
 import supperClubImg from '../assets/supper-club.png'
 import './Hero.css'
 
@@ -28,8 +28,8 @@ const Hero = () => {
           <p className="hero-gujarati-greeting gujarati-text">જય શ્રી કૃષ્ણ</p>
           
           <h1 className="hero-headline">
-            Welcome to<br />
-            <span>Jamanvaaar</span>
+            <span className="hero-welcome-line">Welcome to</span>
+            <span className="hero-brand-line">Jamanvaaar</span>
           </h1>
           
           <p className="hero-tagline-sub">
@@ -44,7 +44,7 @@ const Hero = () => {
             <div className="usp-divider"></div>
             <div className="usp-item">
               <Users size={18} />
-              <span>Starting <strong>₹XXXX</strong> per guest</span>
+              <span><strong>₹3150/-</strong> per Guest</span>
             </div>
           </div>
           
@@ -55,11 +55,6 @@ const Hero = () => {
             <p className="hero-urgency-note">Hurry! Seats fill up 2 weeks in advance.</p>
           </div>
         </div>
-      </div>
-      
-      <div className="hero-scroll-indicator">
-        <DiyaIcon size={28} className="animated" />
-        <span>Explore the Experience</span>
       </div>
     </section>
   )

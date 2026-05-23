@@ -18,7 +18,7 @@ const ExperienceFlow = () => {
     {
       icon: <Utensils size={40} />,
       title: 'Eat Together',
-      description: 'A royal 24+ dish Gujarati Thali served with love and tradition.'
+      description: 'A royal 26-dish Gujarati Thali served with love and tradition.'
     },
     {
       icon: <Heart size={40} />,

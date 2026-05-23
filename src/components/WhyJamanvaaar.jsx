@@ -62,7 +62,7 @@ const WhyJamanvaaar = () => {
                 <span className="stat-label">Seats Only</span>
               </div>
               <div className="stat-card haldi">
-                <span className="stat-num">24+</span>
+                <span className="stat-num">26</span>
                 <span className="stat-label">Dishes Served</span>
               </div>
             </div>

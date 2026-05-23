@@ -2,8 +2,9 @@
    FOOD SHOWCASE — Festive Gallery
    =================================== */
 
-.food-showcase-section {
+.food-showcase-section.section-padding {
   background-color: var(--bg-off-white);
+  padding: 38px 0 100px;
   position: relative;
   overflow: hidden;
 }
@@ -28,6 +29,10 @@
 .food-showcase-section > .container {
   position: relative;
   z-index: 1;
+}
+
+.food-showcase-section .section-header {
+  margin-bottom: 45px;
 }
 
 /* ── Grid ── */
@@ -156,6 +161,14 @@
 }
 
 @media (max-width: 576px) {
+  .food-showcase-section.section-padding {
+    padding: 30px 0 60px;
+  }
+
+  .food-showcase-section .section-header {
+    margin-bottom: 35px;
+  }
+
   .food-grid {
     grid-template-columns: 1fr;
   }

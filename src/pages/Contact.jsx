@@ -45,8 +45,8 @@ const Contact = () => {
           
           <div className="contact-cta-card">
             <h3>Pricing Details</h3>
-            <p className="price-tag">Starting <strong>₹XXXX</strong> per guest</p>
-            <p className="price-note">Incl. of a full 24+ royal dish spread served with love.</p>
+            <p className="price-tag"><strong>₹3150/-</strong> per Guest</p>
+            <p className="price-note">Incl. of a full 26-dish royal spread served with love.</p>
           </div>
         </div>
         
