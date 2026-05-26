@@ -25,6 +25,14 @@
 
 .about-hero-content {
   max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-hero-content .hero-headline {
+  margin-bottom: 22px;
 }
 
 /* Quality section — warm cream with grain */

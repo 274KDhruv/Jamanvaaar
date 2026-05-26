@@ -1,5 +1,5 @@
 import React from 'react'
-import tejalMehta from '../assets/tejal-mehta.png'
+import tejalMehta from '../assets/founder-original.JPG'
 import './FounderSection.css'
 
 const FounderSection = () => {

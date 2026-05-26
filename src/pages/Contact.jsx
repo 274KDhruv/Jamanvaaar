@@ -20,7 +20,7 @@ const Contact = () => {
               <div className="contact-icon-premium"><MapPin size={24} /></div>
               <div className="contact-text">
                 <h4>Location</h4>
-                <p>1st Floor, Mehra House, near Amar Juice Centre, JVPD Scheme, Juhu, Mumbai, 400049</p>
+                <p>Juhu, Mumbai</p>
               </div>
             </div>
             

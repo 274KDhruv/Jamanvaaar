@@ -4,7 +4,7 @@ import aamras from '../assets/aamras.png'
 import dhokla from '../assets/dhokla.png'
 import khandvi from '../assets/khandvi.png'
 import undhiyu from '../assets/undhiyu.png'
-import dining from '../assets/dining-room.png'
+import dining from '../assets/dining-room-12.jpg'
 import './FoodShowcase.css'
 
 const FoodShowcase = () => {
@@ -42,7 +42,7 @@ const FoodShowcase = () => {
         </div>
         
         <div className="food-footer-cta text-center fade-in">
-          <p className="menu-disclaimer">Menu changes weekly to reflect the freshest farm-to-table ingredients.</p>
+          <p className="menu-disclaimer">Each table is served a different curated menu, making every JamanVaaar experience unique.</p>
         </div>
       </div>
     </section>

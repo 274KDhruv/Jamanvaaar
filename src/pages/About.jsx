@@ -1,6 +1,5 @@
 import React from 'react'
 import FounderSection from '../components/FounderSection'
-import tejalMehta from '../assets/tejal-mehta.png'
 import supperClubImg from '../assets/supper-club.png'
 import './About.css'
 
@@ -9,7 +8,6 @@ const About = () => {
     <div className="about-page-premium">
       <section className="about-hero-premium">
         <div className="container about-hero-content fade-in">
-          <h4 className="section-subtitle" style={{color: 'white'}}>The Story</h4>
           <h1 className="hero-headline">Celebrating Home, Heart & Heritage</h1>
           <p className="hero-tagline-sub" style={{color: 'var(--haldi-yellow)'}}>More than just a meal, a memory made with love.</p>
         </div>

@@ -38,7 +38,7 @@
 /* ── Founder Visual ── */
 .founder-visual {
   position: relative;
-  max-width: 500px;
+  max-width: 560px;
   margin: 0 auto;
 }
 
@@ -64,6 +64,10 @@
 
 .founder-img-card img {
   width: 100%;
+  height: auto;
+  max-height: 680px;
+  object-fit: contain;
+  object-position: center;
   border-radius: 14px;
   display: block;
 }

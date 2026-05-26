@@ -145,7 +145,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
   margin-bottom: 50px;
   background: rgba(255, 248, 240, 0.08);
   backdrop-filter: blur(12px);
@@ -166,10 +165,17 @@
   font-size: 1.1rem;
 }
 
-.usp-divider {
-  width: 1px;
-  height: 25px;
-  background: linear-gradient(to bottom, transparent, rgba(212, 160, 23, 0.5), transparent);
+.usp-community {
+  color: rgba(255, 248, 240, 0.95);
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  letter-spacing: 0.3px;
+  line-height: 1.4;
+}
+
+.usp-community svg {
+  color: var(--turmeric-gold);
+  flex-shrink: 0;
 }
 
 /* ── CTA Button ── */
@@ -229,12 +235,8 @@
 /* ── Responsive ── */
 @media (max-width: 992px) {
   .hero-usp-row {
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-  }
-  .usp-divider {
-    display: none;
+    padding: 18px 22px;
+    max-width: min(520px, 92vw);
   }
 }
 
